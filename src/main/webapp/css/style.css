@@ -1,0 +1,17 @@
+.purple {
+    background: #673ab7;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+footer div {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #111e25;
+}
