@@ -54,7 +54,8 @@
                         </b></p>
                         <%--                    <div class="container mt-4">--%>
                         <a href="DeleteServlet?blog_id=<%=blog.getId()%>" class="btn btn-danger">Delete</a>
-                        <a href="edit.jsp?blog_id=<%=blog.getId()%>" class="btn btn-primary">Update</a>
+                        <a href="edit-blog.jsp?blog_id=<%=blog.getId()%>" class="btn btn-warning">Update</a>
+                        <a href="details-blog.jsp?blog_id=<%=blog.getId()%>" class="btn btn-primary">Details</a>
                         <%--                    </div>--%>
                     </div>
                 </div>

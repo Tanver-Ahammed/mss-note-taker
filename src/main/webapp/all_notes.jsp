@@ -62,7 +62,8 @@
                         </b></p>
                         <%--                    <div class="container mt-4">--%>
                         <a href="DeleteServlet?note_id=<%=note.getId()%>" class="btn btn-danger">Delete</a>
-                        <a href="edit.jsp?note_id=<%=note.getId()%>" class="btn btn-primary">Update</a>
+                        <a href="edit-note.jsp?note_id=<%=note.getId()%>" class="btn btn-warning">Update</a>
+                        <a href="details-note.jsp?note_id=<%=note.getId()%>" class="btn btn-primary">Details</a>
                         <%--                    </div>--%>
                     </div>
                 </div>
@@ -152,7 +153,7 @@
 <%--                    </b></p>--%>
 <%--                    &lt;%&ndash;                    <div class="container mt-4">&ndash;%&gt;--%>
 <%--                    <a href="DeleteServlet?note_id=<%=note.getId()%>" class="btn btn-danger">Delete</a>--%>
-<%--                    <a href="edit.jsp?note_id=<%=note.getId()%>" class="btn btn-primary">Update</a>--%>
+<%--                    <a href="edit-note.jsp?note_id=<%=note.getId()%>" class="btn btn-primary">Update</a>--%>
 <%--                    &lt;%&ndash;                    </div>&ndash;%&gt;--%>
 <%--                </div>--%>
 <%--            </div>--%>

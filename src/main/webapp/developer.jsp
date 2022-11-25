@@ -20,20 +20,27 @@
 
 
 <br>
-<div class="container col-md-5">
-    <img src="image/Tanver.jpg" height="300" width="270">
-    <h2>Md. Tanver Ahammed</h2>
-    <b>Student ICT, MBSTU</b><br>
-    <b>Java Developer</b>
-</div>
-<div  class="container col-md-5">
-    <ul>
-        <li><a href="https://www.facebook.com/md.tanver.ahammed.756/" target="_blank"><b>Facebook</b></a></li>
-        <li><a href="https://www.linkedin.com/in/md-tanver-ahammed-1968211b8/"target="_blank"><b>LinkedIn</b></a></li>
-        <li><a href="https://github.com/Tanver-Ahammed" target="_blank"><b>Github</b></a></li>
-    </ul>
-</div>
 
+<div class="card col-md-6 offset-3">
+    <div class="card-body">
+
+        <div class="container col-md-5">
+            <img src="image/Tanver.jpg" height="300" width="270">
+            <h2>Md. Tanver Ahammed</h2>
+            <b>Student ICT, MBSTU</b><br>
+            <b>Java Developer</b>
+        </div>
+        <div class="container col-md-5">
+            <ul>
+                <li><a href="https://www.facebook.com/md.tanver.ahammed.756/" target="_blank"><b>Facebook</b></a></li>
+                <li><a href="https://www.linkedin.com/in/md-tanver-ahammed-1968211b8/"
+                       target="_blank"><b>LinkedIn</b></a></li>
+                <li><a href="https://github.com/Tanver-Ahammed" target="_blank"><b>Github</b></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<br>
 
 <%--footer--%>
 <footer class="bg-light text-center text-lg-start">

@@ -13,7 +13,7 @@ public class Note {
     @Id
     private int id;
     private String title;
-    @Column(length = 1500)
+    @Column(length = 5000)
     private String content;
     private Date addedDate;
 
