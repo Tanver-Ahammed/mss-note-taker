@@ -17,6 +17,7 @@
         <!--        mapping-->
         <mapping class="com.tanver.web.notetaker.entities.Note"/>
         <mapping class="com.tanver.web.notetaker.entities.User"/>
+        <mapping class="com.tanver.web.notetaker.entities.Blog"/>
 
     </session-factory>
 </hibernate-configuration>

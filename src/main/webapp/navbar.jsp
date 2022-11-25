@@ -25,7 +25,13 @@
                     <a class="nav-link active" href="add_notes.jsp">Add Note</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" href="add_blogs.jsp">Add Blogs</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="all_notes.jsp">Show Notes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="all_blogs.jsp">Show Blogs</a>
                 </li>
             </ul>
             <form class="d-flex">
