@@ -52,7 +52,8 @@ public class DeleteServlet extends HttpServlet {
             transaction.commit();
             session.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
+            response.sendRedirect("login.jsp");
         }
 
     }
