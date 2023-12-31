@@ -1,9 +1,6 @@
 package com.tanver.web.notetaker.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Random;
 
@@ -16,6 +13,10 @@ public class Note {
     @Column(length = 5000)
     private String content;
     private Date addedDate;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id_fk", referencedColumnName = "id")
+    private User user;
 
     public Note() {
 
@@ -58,5 +59,13 @@ public class Note {
 
     public void setAddedDate(Date addedDate) {
         this.addedDate = addedDate;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

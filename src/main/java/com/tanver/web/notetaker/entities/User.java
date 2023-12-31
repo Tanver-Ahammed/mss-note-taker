@@ -1,10 +1,16 @@
 package com.tanver.web.notetaker.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users",
+        indexes = {
+        @Index(columnList = "email", name = "user_email_index")
+        }
+)
 public class User {
 
     @Id
@@ -17,6 +23,12 @@ public class User {
     private String address;
 
     private String password;
+
+    @OneToMany(mappedBy = "user", orphanRemoval = true, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Blog> blogs = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", orphanRemoval = true, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Note> notes = new ArrayList<>();
 
     public User() {
     }
@@ -67,5 +79,21 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Blog> getBlogs() {
+        return blogs;
+    }
+
+    public void setBlogs(List<Blog> blogs) {
+        this.blogs = blogs;
+    }
+
+    public List<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
     }
 }

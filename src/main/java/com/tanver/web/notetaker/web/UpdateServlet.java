@@ -2,7 +2,9 @@ package com.tanver.web.notetaker.web;
 
 import com.tanver.web.notetaker.entities.Blog;
 import com.tanver.web.notetaker.entities.Note;
+import com.tanver.web.notetaker.entities.User;
 import com.tanver.web.notetaker.helper.FactoryProvider;
+import com.tanver.web.notetaker.services.UserService;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -27,6 +29,9 @@ public class UpdateServlet extends HttpServlet {
             Session session = FactoryProvider.getSessionFactory().openSession();
             Transaction transaction = session.beginTransaction();
 
+            // get user by email
+            String sessionUserEmail = request.getSession().getAttribute("username").toString();
+
             // fetch note data
             String note_id = request.getParameter("note_id");
             String blog_id = request.getParameter("blog_id");
@@ -36,24 +41,35 @@ public class UpdateServlet extends HttpServlet {
             if (note_id != null) {
                 int noteId = Integer.parseInt(note_id);
                 Note note = session.get(Note.class, noteId);
-                note.setTitle(title);
-                note.setContent(content);
-                note.setAddedDate(new Date());
-                response.sendRedirect("all_notes.jsp");
+                String noteEmail = session.get(User.class, note.getUser().getId()).getEmail();
+                if (sessionUserEmail.equals(noteEmail)) {
+                    note.setTitle(title);
+                    note.setContent(content);
+                    note.setAddedDate(new Date());
+                    response.sendRedirect("all_notes.jsp");
+                } else {
+                    response.sendRedirect("login.jsp");
+                }
             } else if (blog_id != null) {
                 int blogId = Integer.parseInt(blog_id);
                 Blog blog = session.get(Blog.class, blogId);
-                blog.setTitle(title);
-                blog.setContent(content);
-                blog.setAddedDate(new Date());
-                response.sendRedirect("all_blogs.jsp");
+                String blogEmail = session.get(User.class, blog.getUser().getId()).getEmail();
+                if (sessionUserEmail.equals(blogEmail)) {
+                    blog.setTitle(title);
+                    blog.setContent(content);
+                    blog.setAddedDate(new Date());
+                    response.sendRedirect("all_blogs.jsp");
+                } else {
+                    response.sendRedirect("login.jsp");
+                }
             }
 
             transaction.commit();
             session.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
+            response.sendRedirect("login.jsp");
         }
     }
 

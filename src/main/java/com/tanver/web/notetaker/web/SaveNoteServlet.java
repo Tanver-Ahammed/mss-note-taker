@@ -1,7 +1,9 @@
 package com.tanver.web.notetaker.web;
 
 import com.tanver.web.notetaker.entities.Note;
+import com.tanver.web.notetaker.entities.User;
 import com.tanver.web.notetaker.helper.FactoryProvider;
+import com.tanver.web.notetaker.services.UserService;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -38,6 +40,11 @@ public class SaveNoteServlet extends HttpServlet {
             // hibernate save
             Session session = FactoryProvider.getSessionFactory().openSession();
             Transaction transaction = session.beginTransaction();
+
+            // set user in the blog
+            User user = new UserService().getUserByEmail(session,
+                    request.getSession().getAttribute("username").toString());
+            note.setUser(user);
 
             // save()
             session.save(note);

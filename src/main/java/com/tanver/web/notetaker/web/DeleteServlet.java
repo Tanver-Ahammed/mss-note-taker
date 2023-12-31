@@ -2,6 +2,7 @@ package com.tanver.web.notetaker.web;
 
 import com.tanver.web.notetaker.entities.Blog;
 import com.tanver.web.notetaker.entities.Note;
+import com.tanver.web.notetaker.entities.User;
 import com.tanver.web.notetaker.helper.FactoryProvider;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -24,16 +25,29 @@ public class DeleteServlet extends HttpServlet {
             // fetch note id
             String note_id = request.getParameter("note_id");
             String blog_id = request.getParameter("blog_id");
+
+            String sessionUserEmail = request.getSession().getAttribute("username").toString();
+
             if (note_id != null) {
                 int noteId = Integer.parseInt(note_id.trim());
                 Note note = session.get(Note.class, noteId);
-                session.delete(note);
-                response.sendRedirect("all_notes.jsp");
+                String noteEmail = session.get(User.class, note.getUser().getId()).getEmail();
+                if (sessionUserEmail.equals(noteEmail)) {
+                    session.delete(note);
+                    response.sendRedirect("all_notes.jsp");
+                } else {
+                    response.sendRedirect("login.jsp");
+                }
             } else if (blog_id != null) {
                 int blogId = Integer.parseInt(blog_id.trim());
                 Blog blog = session.get(Blog.class, blogId);
-                session.delete(blog);
-                response.sendRedirect("all_blogs.jsp");
+                String blogEmail = session.get(User.class, blog.getUser().getId()).getEmail();
+                if (sessionUserEmail.equals(blogEmail)) {
+                    session.delete(blog);
+                    response.sendRedirect("all_blogs.jsp");
+                } else {
+                    response.sendRedirect("login.jsp");
+                }
             }
             transaction.commit();
             session.close();
