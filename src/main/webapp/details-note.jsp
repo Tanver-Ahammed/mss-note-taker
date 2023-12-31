@@ -49,6 +49,7 @@
         <div class="card">
             <div class="card-header">
                 Title: <span><b><%=note.getTitle()%></b></span><br>
+                Author: <span><b><%=note.getUser().getName()%></b></span><br>
                 Date: <span><%=note.getAddedDate()%></span>
             </div>
             <div class="card-body">

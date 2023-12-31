@@ -12,7 +12,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Edit Blog</title>
+    <title>Blog Details</title>
     <%@include file="all_js_css.jsp" %>
 </head>
 <body>
@@ -39,6 +39,7 @@
         <div class="card">
             <div class="card-header">
                 Title: <span><b><%=blog.getTitle()%></b></span><br>
+                Author: <span><b><%=blog.getUser().getName()%></b></span><br>
                 Date: <span><%=blog.getAddedDate()%></span>
             </div>
             <div class="card-body">
