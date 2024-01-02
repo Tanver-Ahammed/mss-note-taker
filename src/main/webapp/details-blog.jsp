@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" errorPage="error.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="org.hibernate.Session" %>
-<%@ page import="com.tanver.web.notetaker.helper.FactoryProvider" %>
-<%@ page import="com.tanver.web.notetaker.entities.Blog" %><%--
+<%@ page import="com.tanver.web.note.taker.helper.FactoryProvider" %>
+<%@ page import="com.tanver.web.note.taker.entities.Blog" %><%--
   Created by IntelliJ IDEA.
   User: tanver
   Date: 1/4/22

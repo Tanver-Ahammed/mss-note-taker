@@ -1,9 +1,9 @@
-package com.tanver.web.notetaker.web;
+package com.tanver.web.note.taker.web;
 
-import com.tanver.web.notetaker.entities.Note;
-import com.tanver.web.notetaker.entities.User;
-import com.tanver.web.notetaker.helper.FactoryProvider;
-import com.tanver.web.notetaker.services.UserService;
+import com.tanver.web.note.taker.helper.FactoryProvider;
+import com.tanver.web.note.taker.entities.Blog;
+import com.tanver.web.note.taker.entities.User;
+import com.tanver.web.note.taker.services.UserService;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -16,8 +16,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 
-@WebServlet(name = "SaveNoteServlet", value = "/SaveNoteServlet")
-public class SaveNoteServlet extends HttpServlet {
+@WebServlet(name = "SaveBlogServlet", value = "/SaveBlogServlet")
+public class SaveBlogServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,17 +25,17 @@ public class SaveNoteServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
 
         try {
             PrintWriter out = response.getWriter();
 
-            // note's title content fetch
+            // blog's title content fetch
             String title = request.getParameter("title");
             String content = request.getParameter("content");
 
-            Note note = new Note(title, content, new Date());
+            Blog blog = new Blog(title, content, new Date());
 
             // hibernate save
             Session session = FactoryProvider.getSessionFactory().openSession();
@@ -44,20 +44,19 @@ public class SaveNoteServlet extends HttpServlet {
             // set user in the blog
             User user = new UserService().getUserByEmail(session,
                     request.getSession().getAttribute("username").toString());
-            note.setUser(user);
+            blog.setUser(user);
 
             // save()
-            session.save(note);
+            session.save(blog);
 
             transaction.commit();
             session.close();
-            out.println("<h1 style='text-align:center'>Note is added successfully.</h1>");
-            out.println("<h1 style='text-align:center'><a href='all_notes.jsp'>View All</a></h1>");
+            out.println("<h1 style='text-align:center'>Blog is added successfully.</h1>");
+            out.println("<h1 style='text-align:center'><a href='all_blogs.jsp'>View All</a></h1>");
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
 }

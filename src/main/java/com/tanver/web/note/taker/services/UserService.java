@@ -1,6 +1,6 @@
-package com.tanver.web.notetaker.services;
+package com.tanver.web.note.taker.services;
 
-import com.tanver.web.notetaker.entities.User;
+import com.tanver.web.note.taker.entities.User;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 

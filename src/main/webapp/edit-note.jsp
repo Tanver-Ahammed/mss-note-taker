@@ -1,7 +1,7 @@
 <%@ page import="org.hibernate.Session" %>
-<%@ page import="com.tanver.web.notetaker.helper.FactoryProvider" %>
+<%@ page import="com.tanver.web.note.taker.helper.FactoryProvider" %>
 <%@ page import="org.hibernate.Transaction" %>
-<%@ page import="com.tanver.web.notetaker.entities.Note" %><%--
+<%@ page import="com.tanver.web.note.taker.entities.Note" %><%--
   Created by IntelliJ IDEA.
   User: tanver
   Date: 1/4/22

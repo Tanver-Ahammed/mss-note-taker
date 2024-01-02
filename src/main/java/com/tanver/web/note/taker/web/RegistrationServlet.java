@@ -1,7 +1,7 @@
-package com.tanver.web.notetaker.web;
+package com.tanver.web.note.taker.web;
 
-import com.tanver.web.notetaker.entities.User;
-import com.tanver.web.notetaker.helper.FactoryProvider;
+import com.tanver.web.note.taker.helper.FactoryProvider;
+import com.tanver.web.note.taker.entities.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

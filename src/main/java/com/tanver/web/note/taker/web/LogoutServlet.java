@@ -1,4 +1,4 @@
-package com.tanver.web.notetaker.web;
+package com.tanver.web.note.taker.web;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

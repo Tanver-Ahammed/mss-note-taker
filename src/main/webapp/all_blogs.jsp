@@ -1,10 +1,10 @@
 <%@ page import="org.hibernate.Session" %>
-<%@ page import="com.tanver.web.notetaker.helper.FactoryProvider" %>
+<%@ page import="com.tanver.web.note.taker.helper.FactoryProvider" %>
 <%@ page import="org.hibernate.Transaction" %>
 <%@ page import="org.hibernate.Query" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.tanver.web.notetaker.entities.Note" %>
-<%@ page import="com.tanver.web.notetaker.entities.Blog" %>
+<%@ page import="com.tanver.web.note.taker.entities.Note" %>
+<%@ page import="com.tanver.web.note.taker.entities.Blog" %>
 <%--
   Created by IntelliJ IDEA.
   User: tanver

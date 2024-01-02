@@ -1,4 +1,4 @@
-package com.tanver.web.notetaker.entities;
+package com.tanver.web.note.taker.entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;

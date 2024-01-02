@@ -1,4 +1,4 @@
-package com.tanver.web.notetaker.helper;
+package com.tanver.web.note.taker.helper;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

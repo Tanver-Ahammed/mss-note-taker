@@ -1,28 +1,32 @@
-package com.tanver.web.notetaker.entities;
+package com.tanver.web.note.taker.entities;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Random;
 
 @Entity
-@Table(name = "notes")
-public class Note {
+@Table(name = "blogs")
+public class Blog {
+
     @Id
     private int id;
+
     private String title;
+
     @Column(length = 5000)
     private String content;
+
     private Date addedDate;
 
     @ManyToOne
     @JoinColumn(name = "user_id_fk", referencedColumnName = "id")
     private User user;
 
-    public Note() {
 
+    public Blog() {
     }
 
-    public Note(String title, String content, Date addedDate) {
+    public Blog(String title, String content, Date addedDate) {
         this.id = new Random().nextInt(100000);
         this.title = title;
         this.content = content;

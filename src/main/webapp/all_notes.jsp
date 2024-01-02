@@ -1,9 +1,9 @@
 <%@ page import="org.hibernate.Session" %>
-<%@ page import="com.tanver.web.notetaker.helper.FactoryProvider" %>
+<%@ page import="com.tanver.web.note.taker.helper.FactoryProvider" %>
 <%@ page import="org.hibernate.Transaction" %>
 <%@ page import="org.hibernate.Query" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.tanver.web.notetaker.entities.Note" %>
+<%@ page import="com.tanver.web.note.taker.entities.Note" %>
 <%--
   Created by IntelliJ IDEA.
   User: tanver
@@ -93,11 +93,11 @@
 
 
 <%--<%@ page import="org.hibernate.Session" %>--%>
-<%--<%@ page import="com.tanver.web.notetaker.helper.FactoryProvider" %>--%>
+<%--<%@ page import="helper.com.tanver.web.note.taker.FactoryProvider" %>--%>
 <%--<%@ page import="org.hibernate.Transaction" %>--%>
 <%--<%@ page import="org.hibernate.Query" %>--%>
 <%--<%@ page import="java.util.List" %>--%>
-<%--<%@ page import="com.tanver.web.notetaker.entities.Note" %>--%>
+<%--<%@ page import="entities.com.tanver.web.note.taker.Note" %>--%>
 <%--&lt;%&ndash;--%>
 <%--  Created by IntelliJ IDEA.--%>
 <%--  User: tanver--%>
